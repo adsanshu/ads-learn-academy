@@ -17,13 +17,10 @@ function App() {
       <div className="splash-screen">
         <div className="splash-content">
           <div className="logo-circle">🎓</div>
-
           <h1>
             ADS <span>Learn</span>
           </h1>
-
           <h2>Academy</h2>
-
           <p>Learn, Grow, Success</p>
 
           <div className="loading">
@@ -41,7 +38,10 @@ function App() {
   if (page === "login") {
     return (
       <main className="login-page">
-        <button className="back-button" onClick={() => setPage("welcome")}>
+        <button
+          className="back-button"
+          onClick={() => setPage("welcome")}
+        >
           ←
         </button>
 
@@ -70,7 +70,11 @@ function App() {
             Forgot Password?
           </div>
 
-          <button type="button" className="login-button">
+          <button
+            type="button"
+            className="login-button"
+            onClick={() => setPage("home")}
+          >
             Login
           </button>
 
@@ -88,7 +92,9 @@ function App() {
 
         <p className="signup-text">
           Don't have an account?{" "}
-          <b onClick={() => setPage("signup")}>Sign Up</b>
+          <b onClick={() => setPage("signup")}>
+            Sign Up
+          </b>
         </p>
       </main>
     );
@@ -97,7 +103,10 @@ function App() {
   if (page === "signup") {
     return (
       <main className="login-page">
-        <button className="back-button" onClick={() => setPage("login")}>
+        <button
+          className="back-button"
+          onClick={() => setPage("login")}
+        >
           ←
         </button>
 
@@ -128,15 +137,132 @@ function App() {
             placeholder="Create a password"
           />
 
-          <button type="button" className="login-button">
+          <button
+            type="button"
+            className="login-button"
+            onClick={() => setPage("home")}
+          >
             Create Account
           </button>
         </form>
 
         <p className="signup-text">
           Already have an account?{" "}
-          <b onClick={() => setPage("login")}>Login</b>
+          <b onClick={() => setPage("login")}>
+            Login
+          </b>
         </p>
+      </main>
+    );
+  }
+
+  if (page === "home") {
+    return (
+      <main className="home-page">
+
+        <header className="home-header">
+          <div>
+            <p className="small-greeting">Good Morning 👋</p>
+            <h1>Hi, Student!</h1>
+          </div>
+
+          <button className="profile-button">
+            👤
+          </button>
+        </header>
+
+        <section className="welcome-card">
+          <div>
+            <p>Keep Learning</p>
+            <h2>Build Your Future</h2>
+            <span>Learn. Practice. Succeed.</span>
+          </div>
+
+          <div className="card-icon">🎓</div>
+        </section>
+
+        <h2 className="section-title">
+          Choose Your Class
+        </h2>
+
+        <section className="class-grid">
+          <button className="class-card">
+            <span>10</span>
+            <div>
+              <strong>Class 10</strong>
+              <small>CBSE / BSEB</small>
+            </div>
+          </button>
+
+          <button className="class-card">
+            <span>11</span>
+            <div>
+              <strong>Class 11</strong>
+              <small>CBSE / BSEB</small>
+            </div>
+          </button>
+
+          <button className="class-card">
+            <span>12</span>
+            <div>
+              <strong>Class 12</strong>
+              <small>CBSE / BSEB</small>
+            </div>
+          </button>
+        </section>
+
+        <h2 className="section-title">
+          Quick Learning
+        </h2>
+
+        <section className="quick-grid">
+          <button className="quick-card">
+            <span>📚</span>
+            <strong>Courses</strong>
+            <small>Study lessons</small>
+          </button>
+
+          <button className="quick-card">
+            <span>📝</span>
+            <strong>Mock Tests</strong>
+            <small>Test yourself</small>
+          </button>
+
+          <button className="quick-card">
+            <span>📊</span>
+            <strong>Results</strong>
+            <small>Track progress</small>
+          </button>
+
+          <button className="quick-card">
+            <span>👤</span>
+            <strong>Profile</strong>
+            <small>Your account</small>
+          </button>
+        </section>
+
+        <nav className="bottom-nav">
+          <button className="active-nav">
+            🏠
+            <small>Home</small>
+          </button>
+
+          <button>
+            📚
+            <small>Courses</small>
+          </button>
+
+          <button>
+            📝
+            <small>Tests</small>
+          </button>
+
+          <button>
+            👤
+            <small>Profile</small>
+          </button>
+        </nav>
+
       </main>
     );
   }
@@ -178,7 +304,9 @@ function App() {
 
       <p className="login-text">
         Already have an account?{" "}
-        <b onClick={() => setPage("login")}>Login</b>
+        <b onClick={() => setPage("login")}>
+          Login
+        </b>
       </p>
     </main>
   );
