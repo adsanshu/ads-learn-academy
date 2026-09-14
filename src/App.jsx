@@ -16,9 +16,7 @@ function App() {
     return (
       <div className="splash-screen">
         <div className="splash-content">
-          <div className="logo-circle">
-            🎓
-          </div>
+          <div className="logo-circle">🎓</div>
 
           <h1>
             ADS <span>Learn</span>
@@ -41,9 +39,41 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <h1>Welcome to ADS Learn Academy</h1>
-    </div>
+    <main className="welcome-page">
+      <div className="welcome-logo">🎓</div>
+
+      <h1>
+        Welcome to <br />
+        <span>ADS Learn Academy</span>
+      </h1>
+
+      <p className="welcome-text">
+        Learn smarter, practice better,
+        <br />
+        and achieve your goals.
+      </p>
+
+      <div className="board-buttons">
+        <button className="board-card">
+          <strong>CBSE</strong>
+          <small>Central Board</small>
+        </button>
+
+        <button className="board-card">
+          <strong>BSEB</strong>
+          <small>Bihar Board</small>
+        </button>
+      </div>
+
+      <button className="get-started">
+        Get Started
+        <span>→</span>
+      </button>
+
+      <p className="login-text">
+        Already have an account? <b>Login</b>
+      </p>
+    </main>
   );
 }
 
