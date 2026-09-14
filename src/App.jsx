@@ -16,7 +16,10 @@ function App() {
 
   if (page === "splash") {
     return (
-      <div className="splash-screen">
+      <div
+  className="splash-screen"
+  style={{ background: "red", minHeight: "100vh" }}
+>
         <div className="splash-content">
           <div className="logo-circle">🎓</div>
           <h1>
