@@ -5,24 +5,7 @@ function App() {
   const [page, setPage] = useState("splash");
   const [selectedClass, setSelectedClass] = useState("10");
   const [selectedSubject, setSelectedSubject] = useState("Mathematics");
-
-  return (
-  <div
-    style={{
-      minHeight: "100vh",
-      background: "red",
-      color: "white",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: "30px",
-      fontWeight: "bold"
-    }}
-  >
-    ADS Learn Academy
-  </div>
-);
-
+ 
   if (page === "splash") {
     return (
       <div
