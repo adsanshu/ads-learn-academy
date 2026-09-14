@@ -3,7 +3,7 @@ import "./styles.css";
 
 function App() {
   const [page, setPage] = useState("splash");
-  const [page, setPage] = useState("welcome");
+   
   const [selectedClass, setSelectedClass] = useState("10");
   const [selectedSubject, setSelectedSubject] = useState("Mathematics");
  
