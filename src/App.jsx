@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [page, setPage] = useState("splash");
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowSplash(false);
+      setPage("welcome");
     }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (showSplash) {
+  if (page === "splash") {
     return (
       <div className="splash-screen">
         <div className="splash-content">
@@ -35,6 +35,109 @@ function App() {
         <div className="wave wave-two"></div>
         <div className="wave wave-three"></div>
       </div>
+    );
+  }
+
+  if (page === "login") {
+    return (
+      <main className="login-page">
+        <button className="back-button" onClick={() => setPage("welcome")}>
+          ←
+        </button>
+
+        <div className="login-logo">🎓</div>
+
+        <h1>Welcome Back!</h1>
+
+        <p className="login-subtitle">
+          Login to continue learning with ADS Learn Academy.
+        </p>
+
+        <form className="login-form">
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+          />
+
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+          />
+
+          <div className="forgot-password">
+            Forgot Password?
+          </div>
+
+          <button type="button" className="login-button">
+            Login
+          </button>
+
+          <div className="or-divider">
+            <span></span>
+            OR
+            <span></span>
+          </div>
+
+          <button type="button" className="google-button">
+            <span>G</span>
+            Continue with Google
+          </button>
+        </form>
+
+        <p className="signup-text">
+          Don't have an account?{" "}
+          <b onClick={() => setPage("signup")}>Sign Up</b>
+        </p>
+      </main>
+    );
+  }
+
+  if (page === "signup") {
+    return (
+      <main className="login-page">
+        <button className="back-button" onClick={() => setPage("login")}>
+          ←
+        </button>
+
+        <div className="login-logo">🎓</div>
+
+        <h1>Create Account</h1>
+
+        <p className="login-subtitle">
+          Join ADS Learn Academy and start learning.
+        </p>
+
+        <form className="login-form">
+          <label>Full Name</label>
+          <input
+            type="text"
+            placeholder="Enter your name"
+          />
+
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+          />
+
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Create a password"
+          />
+
+          <button type="button" className="login-button">
+            Create Account
+          </button>
+        </form>
+
+        <p className="signup-text">
+          Already have an account?{" "}
+          <b onClick={() => setPage("login")}>Login</b>
+        </p>
+      </main>
     );
   }
 
@@ -65,13 +168,17 @@ function App() {
         </button>
       </div>
 
-      <button className="get-started">
+      <button
+        className="get-started"
+        onClick={() => setPage("login")}
+      >
         Get Started
         <span>→</span>
       </button>
 
       <p className="login-text">
-        Already have an account? <b>Login</b>
+        Already have an account?{" "}
+        <b onClick={() => setPage("login")}>Login</b>
       </p>
     </main>
   );
