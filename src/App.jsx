@@ -218,14 +218,14 @@ function App() {
           <button
   className="subject-card"
   onClick={() => {
-    setSelectedSubject("Physics");
+    setSelectedSubject("Science");
     setPage("subject");
   }}
 >
-            <div className="subject-icon">⚛️</div>
+            <div className="subject-icon">🔬</div>
             <div className="subject-info">
-              <h3>Physics</h3>
-              <p>Concepts, formulas & numericals</p>
+              <h3>Science</h3>
+              <p>Physics, Chemistry & Biology</p>
               <div className="progress-bar">
                 <span style={{ width: "45%" }}></span>
               </div>
