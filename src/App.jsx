@@ -6,13 +6,22 @@ function App() {
   const [selectedClass, setSelectedClass] = useState("10");
   const [selectedSubject, setSelectedSubject] = useState("Mathematics");
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setPage("welcome");
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  return (
+  <div
+    style={{
+      minHeight: "100vh",
+      background: "red",
+      color: "white",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "30px",
+      fontWeight: "bold"
+    }}
+  >
+    ADS Learn Academy
+  </div>
+);
 
   if (page === "splash") {
     return (
