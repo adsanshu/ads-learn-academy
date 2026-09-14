@@ -6,13 +6,16 @@ function App() {
    
   const [selectedClass, setSelectedClass] = useState("10");
   const [selectedSubject, setSelectedSubject] = useState("Mathematics");
- 
+ useEffect(() => {
+  const timer = setTimeout(() => {
+    setPage("welcome");
+  }, 3000);
+
+  return () => clearTimeout(timer);
+}, []);
   if (page === "splash") {
     return (
-      <div
-  className="splash-screen"
-  style={{ background: "red", minHeight: "100vh" }}
->
+      <div className="splash-screen">
         <div className="splash-content">
           <div className="logo-circle">🎓</div>
           <h1>
