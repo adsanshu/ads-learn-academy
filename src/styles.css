@@ -700,6 +700,74 @@ button {
   color: #687386;
   font-size: 13px;
 }
+.subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.subject-card {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dbe4f0;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.subject-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  background: #eef5ff;
+  border-radius: 12px;
+}
+
+.subject-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.subject-info h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.subject-info p {
+  margin: 0 0 8px;
+  color: #687386;
+  font-size: 13px;
+}
+
+.subject-card > b {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e7edf5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+}
 
 .learning-card b {
   font-size: 24px;
