@@ -1181,16 +1181,19 @@ if (page === "subject") {
 <button
   className="chapter-card"
   onClick={() => {
-  setSelectedChapter(2);
-  setPage("chapter");
-}}
+    setSelectedChapter(2);
+    setPage("chapter");
+  }}
 >
   <div className="chapter-number">02</div>
-            <h3>Chapter 2</h3>
-            <p>Important Concepts & Examples</p>
-          </div>
-          <span>›</span>
-        </button>
+
+  <div>
+    <h3>Chapter 2</h3>
+    <p>Important Concepts & Examples</p>
+  </div>
+
+  <span>›</span>
+</button>
 
         <button
   className="chapter-card"
