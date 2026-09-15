@@ -1167,14 +1167,8 @@ if (page === "subject") {
 >
   <div className="chapter-number">01</div>
   <div>
-    <h2>Chapter {selectedChapter}</h2>
-<p>
-  {selectedChapter === 1
-    ? "Introduction & Basic Concepts"
-    : selectedChapter === 2
-    ? "Important Concepts & Examples"
-    : "Practice & Numerical Problems"}
-</p>
+    <h3>Chapter 1</h3>
+<p>Introduction & Basic Concepts</p>
   </div>
   <span>›</span>
 </button>
@@ -1285,19 +1279,119 @@ if (page === "subject") {
     <b>›</b>
   </button>
 
-  <button className="chapter-material-card">
-    <span>🧪</span>
-    <div>
-      <h3>Chapter Test</h3>
-      <p>Test your chapter preparation</p>
-    </div>
-    <b>›</b>
-  </button>
-
+  <button
+  className="chapter-material-card"
+  onClick={() => {
+    setLearningSection("test");
+    setPage("test");
+  }}
+>
+  <span>🧪</span>
+  <div>
+    <h3>Chapter Test</h3>
+    <p>Test your chapter preparation</p>
+  </div>
+  <b>›</b>
+</button>
 </section>
     </main>
   );
   }
+
+if (page === "practice") {
+  return (
+    <main className="practice-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("chapter")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="practice-header">
+        <span>📝</span>
+        <div>
+          <h2>Chapter {selectedChapter} Practice</h2>
+          <p>Practice important questions</p>
+        </div>
+      </section>
+
+      <section className="practice-content">
+        <div className="question-card">
+          <strong>Question 1</strong>
+          <p>
+            Write the important points of this chapter.
+          </p>
+        </div>
+
+        <div className="question-card">
+          <strong>Question 2</strong>
+          <p>
+            Explain the basic concepts with suitable examples.
+          </p>
+        </div>
+
+        <div className="question-card">
+          <strong>Question 3</strong>
+          <p>
+            Solve the given practice problem step by step.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  );
+}
+
+if (page === "test") {
+  return (
+    <main className="test-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("chapter")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="test-header">
+        <span>🧪</span>
+        <div>
+          <h2>Chapter {selectedChapter} Test</h2>
+          <p>Test your chapter preparation</p>
+        </div>
+      </section>
+
+      <section className="test-content">
+        <div className="test-info">
+          <strong>Chapter Test</strong>
+          <p>10 Questions · Practice Test</p>
+        </div>
+
+        <button className="start-test-button">
+          Start Test
+        </button>
+      </section>
+
+    </main>
+  );
+}
+  
   if (page === "notes") {
   return (
     <main className="notes-page">
@@ -1319,8 +1413,14 @@ if (page === "subject") {
       <section className="notes-header">
         <span>📖</span>
         <div>
-          <h2>Chapter 1 Notes</h2>
-          <p>Introduction & Basic Concepts</p>
+          <h2>Chapter {selectedChapter} Notes</h2>
+<p>
+  {selectedChapter === 1
+    ? "Introduction & Basic Concepts"
+    : selectedChapter === 2
+    ? "Important Concepts & Examples"
+    : "Practice & Numerical Problems"}
+</p>
         </div>
       </section>
 
@@ -1372,8 +1472,14 @@ if (page === "video") {
       <section className="video-header">
         <span>🎥</span>
         <div>
-          <h2>Chapter 1 Video Lesson</h2>
-          <p>Introduction & Basic Concepts</p>
+          <h2>Chapter {selectedChapter} Video Lesson</h2>
+<p>
+  {selectedChapter === 1
+    ? "Introduction & Basic Concepts"
+    : selectedChapter === 2
+    ? "Important Concepts & Examples"
+    : "Practice & Numerical Problems"}
+</p>
         </div>
       </section>
 
