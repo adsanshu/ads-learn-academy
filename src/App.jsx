@@ -926,7 +926,26 @@ function App() {
     </button>
 
     <button
-      class
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Hindi");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📝</div>
+      <div className="subject-info">
+        <h3>Hindi</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+  </section>
+)}
         
         {selectedClass !== "11" && (
         <section className="subject-list">
