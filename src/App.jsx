@@ -182,7 +182,7 @@ function App() {
             Class 12
           </button>
         </section>
-        {selectedClass === "11" && (
+        {(selectedClass === "11" || selectedClass === "12") && (
   <section className="stream-selector">
     <h3>Select Stream</h3>
 
@@ -461,7 +461,463 @@ function App() {
 
   </section>
 )}
+{selectedClass === "11" && selectedStream === "Arts" && (
+  <section className="subject-list">
 
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("History");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🏛️</div>
+      <div className="subject-info">
+        <h3>History</h3>
+        <p>Ancient, Medieval & Modern History</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Geography");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🌍</div>
+      <div className="subject-info">
+        <h3>Geography</h3>
+        <p>Physical, Human & Indian Geography</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Political Science");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🏛️</div>
+      <div className="subject-info">
+        <h3>Political Science</h3>
+        <p>Politics, Constitution & Government</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Economics");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">💰</div>
+      <div className="subject-info">
+        <h3>Economics</h3>
+        <p>Economic concepts & Indian economy</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("English");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📖</div>
+      <div className="subject-info">
+        <h3>English</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Hindi");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📝</div>
+      <div className="subject-info">
+        <h3>Hindi</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+  </section>
+)}
+        {selectedClass === "12" && selectedStream === "Science" && (
+  <section className="subject-list">
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Mathematics");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🔢</div>
+      <div className="subject-info">
+        <h3>Mathematics</h3>
+        <p>Algebra, Calculus & Practice</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Physics");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">⚛️</div>
+      <div className="subject-info">
+        <h3>Physics</h3>
+        <p>Concepts, formulas & numericals</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Chemistry");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🧪</div>
+      <div className="subject-info">
+        <h3>Chemistry</h3>
+        <p>Organic, Inorganic & Physical Chemistry</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Biology");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🧬</div>
+      <div className="subject-info">
+        <h3>Biology</h3>
+        <p>Botany, Zoology & Life Sciences</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("English");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📖</div>
+      <div className="subject-info">
+        <h3>English</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Hindi");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📝</div>
+      <div className="subject-info">
+        <h3>Hindi</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+  </section>
+)}
+        {selectedClass === "12" && selectedStream === "Commerce" && (
+  <section className="subject-list">
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Accountancy");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📊</div>
+      <div className="subject-info">
+        <h3>Accountancy</h3>
+        <p>Accounting, Partnership & Company Accounts</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Business Studies");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">💼</div>
+      <div className="subject-info">
+        <h3>Business Studies</h3>
+        <p>Management, Finance & Marketing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Economics");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📈</div>
+      <div className="subject-info">
+        <h3>Economics</h3>
+        <p>Microeconomics & Macroeconomics</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Mathematics");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🔢</div>
+      <div className="subject-info">
+        <h3>Mathematics</h3>
+        <p>Algebra, Calculus & Practice</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("English");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📖</div>
+      <div className="subject-info">
+        <h3>English</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Hindi");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📝</div>
+      <div className="subject-info">
+        <h3>Hindi</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+  </section>
+)}
+        {selectedClass === "12" && selectedStream === "Arts" && (
+  <section className="subject-list">
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("History");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🏛️</div>
+      <div className="subject-info">
+        <h3>History</h3>
+        <p>Ancient, Medieval & Modern History</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Geography");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">🌍</div>
+      <div className="subject-info">
+        <h3>Geography</h3>
+        <p>Physical, Human & Indian Geography</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Political Science");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">⚖️</div>
+      <div className="subject-info">
+        <h3>Political Science</h3>
+        <p>Politics, Constitution & International Relations</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("Economics");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📈</div>
+      <div className="subject-info">
+        <h3>Economics</h3>
+        <p>Microeconomics & Macroeconomics</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      className="subject-card"
+      onClick={() => {
+        setSelectedSubject("English");
+        setPage("subject");
+      }}
+    >
+      <div className="subject-icon">📖</div>
+      <div className="subject-info">
+        <h3>English</h3>
+        <p>Literature, Grammar & Writing</p>
+        <div className="progress-bar">
+          <span style={{ width: "0%" }}></span>
+        </div>
+        <small>0% completed</small>
+      </div>
+      <b>›</b>
+    </button>
+
+    <button
+      class
         
         {selectedClass !== "11" && (
         <section className="subject-list">
