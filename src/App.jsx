@@ -8,6 +8,7 @@ function App() {
   const [selectedSubject, setSelectedSubject] = useState("Mathematics");
   const [selectedStream, setSelectedStream] = useState("");
   const [learningSection, setLearningSection] = useState("");
+  const [selectedChapter, setSelectedChapter] = useState(1);
  useEffect(() => {
   const timer = setTimeout(() => {
     setPage("welcome");
@@ -1160,27 +1161,44 @@ if (page === "subject") {
         <button
   className="chapter-card"
   onClick={() => {
-    setPage("chapter");
-  }}
+  setSelectedChapter(1);
+  setPage("chapter");
+}}
 >
   <div className="chapter-number">01</div>
   <div>
-    <h3>Chapter 1</h3>
-    <p>Introduction & Basic Concepts</p>
+    <h2>Chapter {selectedChapter}</h2>
+<p>
+  {selectedChapter === 1
+    ? "Introduction & Basic Concepts"
+    : selectedChapter === 2
+    ? "Important Concepts & Examples"
+    : "Practice & Numerical Problems"}
+</p>
   </div>
   <span>›</span>
 </button>
-
-        <button className="chapter-card">
-          <div className="chapter-number">02</div>
-          <div>
+<button
+  className="chapter-card"
+  onClick={() => {
+  setSelectedChapter(2);
+  setPage("chapter");
+}}
+>
+  <div className="chapter-number">02</div>
             <h3>Chapter 2</h3>
             <p>Important Concepts & Examples</p>
           </div>
           <span>›</span>
         </button>
 
-        <button className="chapter-card">
+        <button
+  className="chapter-card"
+  onClick={() => {
+  setSelectedChapter(3);
+  setPage("chapter");
+}}
+>
           <div className="chapter-number">03</div>
           <div>
             <h3>Chapter 3</h3>
@@ -1214,8 +1232,14 @@ if (page === "subject") {
 
       <section className="chapter-content">
         <span>📖</span>
-        <h2>Chapter 1</h2>
-        <p>Introduction & Basic Concepts</p>
+        <h2>Chapter {selectedChapter}</h2>
+        <p>
+  {selectedChapter === 1
+    ? "Introduction & Basic Concepts"
+    : selectedChapter === 2
+    ? "Important Concepts & Examples"
+    : "Practice & Numerical Problems"}
+</p>
       </section>
 <section className="chapter-materials">
 
