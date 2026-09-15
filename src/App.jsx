@@ -7,6 +7,7 @@ function App() {
   const [selectedClass, setSelectedClass] = useState("10");
   const [selectedSubject, setSelectedSubject] = useState("Mathematics");
   const [selectedStream, setSelectedStream] = useState("");
+  const [learningSection, setLearningSection] = useState("");
  useEffect(() => {
   const timer = setTimeout(() => {
     setPage("welcome");
@@ -947,7 +948,7 @@ function App() {
   </section>
 )}
         
-        {selectedClass !== "11" && (
+        {selectedClass === "10" && (
         <section className="subject-list">
 
           <button
@@ -1090,14 +1091,20 @@ if (page === "subject") {
       </section>
             <div className="learning-options">
 
-        <button className="learning-card">
-          <span>📚</span>
-          <div>
-            <h3>Study Material</h3>
-            <p>Learn chapter-wise concepts</p>
-          </div>
-          <b>›</b>
-        </button>
+        <button
+  className="learning-card"
+  onClick={() => {
+    setLearningSection("study");
+    setPage("learning");
+  }}
+>
+  <span>📚</span>
+  <div>
+    <h3>Study Material</h3>
+    <p>Learn chapter-wise concepts</p>
+  </div>
+  <b>›</b>
+</button>
 
         <button className="learning-card">
           <span>📝</span>
@@ -1194,6 +1201,237 @@ if (page === "subject") {
     </main>
   );
 }
+  if (page === "learning") {
+  return (
+    <main className="learning-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("subject")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="learning-banner">
+        <span>📚</span>
+        <div>
+          <h2>Study Material</h2>
+          <p>Chapter-wise learning material</p>
+        </div>
+      </section>
+
+      <section className="chapter-list">
+
+        <button
+  className="chapter-card"
+  onClick={() => {
+    setPage("chapter");
+  }}
+>
+  <div className="chapter-number">01</div>
+  <div>
+    <h3>Chapter 1</h3>
+    <p>Introduction & Basic Concepts</p>
+  </div>
+  <span>›</span>
+</button>
+
+        <button className="chapter-card">
+          <div className="chapter-number">02</div>
+          <div>
+            <h3>Chapter 2</h3>
+            <p>Important Concepts & Examples</p>
+          </div>
+          <span>›</span>
+        </button>
+
+        <button className="chapter-card">
+          <div className="chapter-number">03</div>
+          <div>
+            <h3>Chapter 3</h3>
+            <p>Practice & Numerical Problems</p>
+          </div>
+          <span>›</span>
+        </button>
+
+      </section>
+
+    </main>
+  );
+  }
+  if (page === "chapter") {
+  return (
+    <main className="chapter-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("learning")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="chapter-content">
+        <span>📖</span>
+        <h2>Chapter 1</h2>
+        <p>Introduction & Basic Concepts</p>
+      </section>
+<section className="chapter-materials">
+
+  <button
+  className="chapter-material-card"
+  onClick={() => {
+    setLearningSection("notes");
+    setPage("notes");
+  }}
+>
+  <span>📖</span>
+  <div>
+    <h3>Chapter Notes</h3>
+    <p>Read complete chapter notes</p>
+  </div>
+  <b>›</b>
+</button>
+  
+<button
+  className="chapter-material-card"
+  onClick={() => {
+    setLearningSection("video");
+    setPage("video");
+  }}
+>
+  <span>🎥</span>
+  <div>
+    <h3>Video Lesson</h3>
+    <p>Learn this chapter through video</p>
+  </div>
+  <b>›</b>
+</button>
+
+  <button className="chapter-material-card">
+    <span>📝</span>
+    <div>
+      <h3>Practice Questions</h3>
+      <p>Practice important questions</p>
+    </div>
+    <b>›</b>
+  </button>
+
+  <button className="chapter-material-card">
+    <span>🧪</span>
+    <div>
+      <h3>Chapter Test</h3>
+      <p>Test your chapter preparation</p>
+    </div>
+    <b>›</b>
+  </button>
+
+</section>
+    </main>
+  );
+  }
+  if (page === "notes") {
+  return (
+    <main className="notes-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("chapter")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="notes-header">
+        <span>📖</span>
+        <div>
+          <h2>Chapter 1 Notes</h2>
+          <p>Introduction & Basic Concepts</p>
+        </div>
+      </section>
+
+      <article className="notes-content">
+        <h2>Introduction</h2>
+
+        <p>
+          In this chapter, you will learn the basic concepts,
+          important definitions and fundamental ideas of the topic.
+        </p>
+
+        <h2>Key Concepts</h2>
+
+        <ul>
+          <li>Understand the basic definitions.</li>
+          <li>Learn important concepts step by step.</li>
+          <li>Practice examples and questions.</li>
+        </ul>
+
+        <h2>Quick Revision</h2>
+
+        <p>
+          Revise the important points regularly and practice
+          questions after completing the chapter.
+        </p>
+      </article>
+
+    </main>
+  );
+  }
+if (page === "video") {
+  return (
+    <main className="video-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("chapter")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="video-header">
+        <span>🎥</span>
+        <div>
+          <h2>Chapter 1 Video Lesson</h2>
+          <p>Introduction & Basic Concepts</p>
+        </div>
+      </section>
+
+      <section className="video-placeholder">
+        <div className="play-icon">▶</div>
+        <h3>Video Lesson</h3>
+        <p>Video will be available here.</p>
+      </section>
+
+    </main>
+  );
+}
+  
   if (page === "home") {
     return (
       <main className="home-page">
