@@ -342,6 +342,7 @@ function App() {
     </button>
   </section>
 )}
+        {selectedClass !== "11" && (
         <section className="subject-list">
 
           <button
@@ -445,7 +446,7 @@ function App() {
   <b>›</b>
 </button>
         </section>
-
+)}
       </main>
     );
   }
