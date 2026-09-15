@@ -6,6 +6,7 @@ function App() {
    
   const [selectedClass, setSelectedClass] = useState("10");
   const [selectedSubject, setSelectedSubject] = useState("Mathematics");
+  const [selectedStream, setSelectedStream] = useState("");
  useEffect(() => {
   const timer = setTimeout(() => {
     setPage("welcome");
@@ -181,6 +182,40 @@ function App() {
             Class 12
           </button>
         </section>
+        {selectedClass === "11" && (
+  <section className="stream-selector">
+    <h3>Select Stream</h3>
+
+    <div className="stream-grid">
+      <button
+        className={selectedStream === "Science" ? "selected" : ""}
+        onClick={() => setSelectedStream("Science")}
+      >
+        🔬
+        <strong>Science</strong>
+        <small>PCM / PCB</small>
+      </button>
+
+      <button
+        className={selectedStream === "Commerce" ? "selected" : ""}
+        onClick={() => setSelectedStream("Commerce")}
+      >
+        💼
+        <strong>Commerce</strong>
+        <small>Accounts & Business</small>
+      </button>
+
+      <button
+        className={selectedStream === "Arts" ? "selected" : ""}
+        onClick={() => setSelectedStream("Arts")}
+      >
+        🎨
+        <strong>Arts / Humanities</strong>
+        <small>History & Social Studies</small>
+      </button>
+    </div>
+  </section>
+)}
 
         <div className="course-heading">
           <div>
