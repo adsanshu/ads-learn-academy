@@ -237,14 +237,14 @@ function App() {
           <button
   className="subject-card"
   onClick={() => {
-    setSelectedSubject("Chemistry");
+    setSelectedSubject("Social Science");
     setPage("subject");
   }}
 >
-            <div className="subject-icon">🧪</div>
+            <div className="subject-icon">🌍</div>
             <div className="subject-info">
-              <h3>Chemistry</h3>
-              <p>Reactions, concepts & practice</p>
+              <h3>Social Science</h3>
+              <p>History, Geography, Civics & Economics</p>
               <div className="progress-bar">
                 <span style={{ width: "30%" }}></span>
               </div>
@@ -263,7 +263,7 @@ function App() {
             <div className="subject-icon">📖</div>
             <div className="subject-info">
               <h3>English</h3>
-              <p>Grammar, literature & writing</p>
+              <p>Grammar, Literature & Writing</p>
               <div className="progress-bar">
                 <span style={{ width: "55%" }}></span>
               </div>
@@ -271,7 +271,28 @@ function App() {
             </div>
             <b>›</b>
           </button>
+<button
+  className="subject-card"
+  onClick={() => {
+    setSelectedSubject("Hindi");
+    setPage("subject");
+  }}
+>
+  <div className="subject-icon">📝</div>
 
+  <div className="subject-info">
+    <h3>Hindi</h3>
+    <p>Literature, Grammar & Writing</p>
+
+    <div className="progress-bar">
+      <span style={{ width: "40%" }}></span>
+    </div>
+
+    <small>40% completed</small>
+  </div>
+
+  <b>›</b>
+</button>
         </section>
 
       </main>
