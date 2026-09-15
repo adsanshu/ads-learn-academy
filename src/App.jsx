@@ -161,27 +161,36 @@ function App() {
         </header>
 
         <section className="class-selector">
-          <button
-            className={selectedClass === "10" ? "selected" : ""}
-            onClick={() => setSelectedClass("10")}
-          >
-            Class 10
-          </button>
+  <button
+    className={selectedClass === "10" ? "selected" : ""}
+    onClick={() => {
+      setSelectedClass("10");
+      setSelectedStream("");
+    }}
+  >
+    Class 10
+  </button>
 
-          <button
-            className={selectedClass === "11" ? "selected" : ""}
-            onClick={() => setSelectedClass("11")}
-          >
-            Class 11
-          </button>
+  <button
+    className={selectedClass === "11" ? "selected" : ""}
+    onClick={() => {
+      setSelectedClass("11");
+      setSelectedStream("");
+    }}
+  >
+    Class 11
+  </button>
 
-          <button
-            className={selectedClass === "12" ? "selected" : ""}
-            onClick={() => setSelectedClass("12")}
-          >
-            Class 12
-          </button>
-        </section>
+  <button
+    className={selectedClass === "12" ? "selected" : ""}
+    onClick={() => {
+      setSelectedClass("12");
+      setSelectedStream("");
+    }}
+  >
+    Class 12
+  </button>
+</section>
         {(selectedClass === "11" || selectedClass === "12") && (
   <section className="stream-selector">
     <h3>Select Stream</h3>
