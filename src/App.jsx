@@ -1126,47 +1126,6 @@ if (page === "subject") {
 
       </div>
        
-      <h2 className="material-title">
-        Chapters
-      </h2>
-
-      <section className="chapter-list">
-
-        <button className="chapter-card">
-          <div className="chapter-number">01</div>
-
-          <div>
-            <h3>Chapter 1</h3>
-            <p>Introduction & Basic Concepts</p>
-          </div>
-
-          <span>✓</span>
-        </button>
-
-        <button className="chapter-card">
-          <div className="chapter-number">02</div>
-
-          <div>
-            <h3>Chapter 2</h3>
-            <p>Important Concepts & Examples</p>
-          </div>
-
-          <span>›</span>
-        </button>
-
-        <button className="chapter-card">
-          <div className="chapter-number">03</div>
-
-          <div>
-            <h3>Chapter 3</h3>
-            <p>Practice & Numerical Problems</p>
-          </div>
-
-          <span>›</span>
-        </button>
-
-      </section>
-
     </main>
   );
 }
