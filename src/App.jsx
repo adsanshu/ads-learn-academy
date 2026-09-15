@@ -1088,7 +1088,36 @@ if (page === "subject") {
           <small>Completed</small>
         </div>
       </section>
+            <div className="learning-options">
 
+        <button className="learning-card">
+          <span>📚</span>
+          <div>
+            <h3>Study Material</h3>
+            <p>Learn chapter-wise concepts</p>
+          </div>
+          <b>›</b>
+        </button>
+
+        <button className="learning-card">
+          <span>📝</span>
+          <div>
+            <h3>Notes</h3>
+            <p>Quick revision notes</p>
+          </div>
+          <b>›</b>
+        </button>
+
+        <button className="learning-card">
+          <span>🧪</span>
+          <div>
+            <h3>Mock Test</h3>
+            <p>Test your preparation</p>
+          </div>
+          <b>›</b>
+        </button>
+
+      </div>
       <h2 className="material-title">
         Learning Materials
       </h2>
