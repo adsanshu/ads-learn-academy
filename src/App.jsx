@@ -9,6 +9,21 @@ function App() {
   const [selectedStream, setSelectedStream] = useState("");
   const [learningSection, setLearningSection] = useState("");
   const [selectedChapter, setSelectedChapter] = useState(1);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [currentQuestion, setCurrentQuestion] = useState(1);
+  const [testScore, setTestScore] = useState(0);
+  const correctAnswers = {
+  1: "A",
+  2: "B",
+  3: "C",
+  4: "A",
+  5: "D",
+  6: "B",
+  7: "A",
+  8: "C",
+  9: "B",
+  10: "D",
+};
  useEffect(() => {
   const timer = setTimeout(() => {
     setPage("welcome");
@@ -1383,8 +1398,205 @@ if (page === "test") {
           <p>10 Questions · Practice Test</p>
         </div>
 
-        <button className="start-test-button">
-          Start Test
+        <button
+  className="start-test-button"
+  onClick={() => {
+    setPage("test-question");
+  }}
+>
+  Start Test
+</button>
+      </section>
+
+    </main>
+  );
+}
+
+  if (page === "test-question") {
+  return (
+    <main className="test-question-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("test")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="question-progress">
+        <div>
+          <strong>Question {currentQuestion}</strong>
+<span>of 10</span>
+        </div>
+
+        <div className="progress-bar">
+          <div className="progress-fill"></div>
+        </div>
+      </section>
+
+      <section className="test-question-card">
+        <h2>Question {currentQuestion}</h2>
+
+   <p>
+  {currentQuestion === 1
+    ? "What is the main concept of this chapter?"
+    : currentQuestion === 2
+    ? "Which statement correctly explains the topic?"
+    : currentQuestion === 3
+    ? "Which of the following is an important point?"
+    : currentQuestion === 4
+    ? "Choose the correct answer."
+    : currentQuestion === 5
+    ? "Which option is related to this chapter?"
+    : currentQuestion === 6
+    ? "What should you remember from this chapter?"
+    : currentQuestion === 7
+    ? "Which statement is correct?"
+    : currentQuestion === 8
+    ? "Select the correct concept."
+    : currentQuestion === 9
+    ? "Which option is most appropriate?"
+    : "What is the correct conclusion?"
+  }
+</p>
+
+        <div className="answer-options">
+          <button
+  className={selectedAnswer === "A" ? "selected-answer" : ""}
+  onClick={() => setSelectedAnswer("A")}
+>
+  {currentQuestion === 1
+    ? "A. Basic Concept"
+    : currentQuestion === 2
+    ? "A. Correct Statement"
+    : currentQuestion === 3
+    ? "A. Important Point"
+    : "A. Correct Answer"}
+
+  A. Option One
+</button>
+
+<button
+  className={selectedAnswer === "B" ? "selected-answer" : ""}
+  onClick={() => setSelectedAnswer("B")}
+>
+  {currentQuestion === 1
+    ? "B. Advanced Concept"
+    : currentQuestion === 2
+    ? "B. Incorrect Statement"
+    : currentQuestion === 3
+    ? "B. Less Important Point"
+    : "B. Other Answer"}
+</button>
+<button
+  className={selectedAnswer === "C" ? "selected-answer" : ""}
+  onClick={() => setSelectedAnswer("C")}
+>
+  {currentQuestion === 1
+    ? "C. Practical Example"
+    : currentQuestion === 2
+    ? "C. Related Statement"
+    : currentQuestion === 3
+    ? "C. Different Point"
+    : "C. Another Answer"}
+</button>
+<button
+  className={selectedAnswer === "D" ? "selected-answer" : ""}
+  onClick={() => setSelectedAnswer("D")}
+>
+  {currentQuestion === 1
+    ? "D. The Final Concept"
+    : currentQuestion === 2
+    ? "D. None of These"
+    : currentQuestion === 3
+    ? "D. All of These"
+    : "D. None of These"}
+</button>
+        </div>
+      </section>
+
+<button
+  className="next-question-button"
+  onClick={() => {
+    if (!selectedAnswer) {
+      alert("Please select an answer first.");
+      return;
+    }
+
+if (selectedAnswer === correctAnswers[currentQuestion]) {
+  setTestScore(testScore + 1);
+}
+    
+    if (currentQuestion < 10) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedAnswer("");
+    }
+  }}
+>
+  {currentQuestion < 10 ? "Next Question →" : "Finish Test"}
+</button>
+
+    </main>
+  );
+  }
+
+if (page === "test-result") {
+  return (
+    <main className="test-result-page">
+
+      <header className="subject-header">
+        <button
+          className="back-button"
+          onClick={() => setPage("chapter")}
+        >
+          ←
+        </button>
+
+        <div>
+          <p>Class {selectedClass}</p>
+          <h1>{selectedSubject}</h1>
+        </div>
+      </header>
+
+      <section className="result-card">
+        <div className="result-icon">🏆</div>
+
+        <h2>Test Completed!</h2>
+
+        <p>Your Score</p>
+
+        <div className="score">
+          {testScore} / 10
+        </div>
+
+        <p className="result-message">
+          Keep practicing and improve your score.
+        </p>
+
+        <button
+          className="retry-test-button"
+          onClick={() => {
+            setCurrentQuestion(1);
+            setSelectedAnswer("");
+            setTestScore(0);
+            setPage("test-question");
+          }}
+        >
+          Retry Test
+        </button>
+
+        <button
+          className="back-chapter-button"
+          onClick={() => setPage("chapter")}
+        >
+          Back to Chapter
         </button>
       </section>
 
