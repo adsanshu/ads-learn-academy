@@ -609,3 +609,43 @@ button {
     padding-right: 4px;
   }
   }
+.stream-selector {
+  margin-top: 20px;
+}
+
+.stream-selector h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.stream-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stream-grid button {
+  border: 1px solid #dbe4f0;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.stream-grid button.selected {
+  border-color: #0d6efd;
+  background: #eef5ff;
+}
+
+.stream-grid button strong {
+  font-size: 14px;
+}
+
+.stream-grid button small {
+  color: #687386;
+  font-size: 11px;
+}
