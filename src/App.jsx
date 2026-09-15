@@ -1125,38 +1125,7 @@ if (page === "subject") {
         </button>
 
       </div>
-      <h2 className="material-title">
-        Learning Materials
-      </h2>
-
-      <section className="material-grid">
-
-        <button className="material-card">
-          <span>📖</span>
-          <strong>Notes</strong>
-          <small>Chapter notes</small>
-        </button>
-
-        <button className="material-card">
-          <span>🎥</span>
-          <strong>Videos</strong>
-          <small>Video lessons</small>
-        </button>
-
-        <button className="material-card">
-          <span>📄</span>
-          <strong>PDFs</strong>
-          <small>Study material</small>
-        </button>
-
-        <button className="material-card">
-          <span>✏️</span>
-          <strong>Practice</strong>
-          <small>Practice questions</small>
-        </button>
-
-      </section>
-
+       
       <h2 className="material-title">
         Chapters
       </h2>
